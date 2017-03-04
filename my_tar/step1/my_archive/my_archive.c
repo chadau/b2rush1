@@ -5,7 +5,7 @@
 ** Login   <hamid@epitech.net>
 ** 
 ** Started on  Fri Mar  3 19:33:01 2017 Hamidoullah NOUR OMAR
-** Last update Sat Mar  4 13:05:02 2017 Hamidoullah NOUR OMAR
+** Last update Sat Mar  4 17:02:03 2017 Hamidoullah NOUR OMAR
 */
 
 #include "my.h"
@@ -30,13 +30,31 @@ void	my_archive(char **str, int ac)
       buffer = malloc(sizeof(char) * sb.st_size + 1);
       fd = open(str[i], O_RDONLY);
       size = read(fd, buffer, sb.st_size);
-      name = my_strcat("\nNEXT FILE: ", str[i], 0, 0);
-      name = my_strcat(name, "\n\n", 0, 0);
+      name = name_size_right(str[i]);
       buffer = my_strcat(name, buffer, 0, 0);
       save = my_strcat(save, buffer, 0, 0);
       final_size = final_size + sb.st_size + my_strlen(name);
     }
   archive_file(save, final_size);
+}
+
+char	*name_size_right(char *str)
+{
+  char	*name;
+  char	*rights;
+  char	*size;
+  struct stat	sb;
+  
+  stat(str, &sb);
+  name = my_strcat("\nNAME OF FILE: ", str, 0, 0);
+  rights = assemble_rights(sb);
+  name = my_strcat(name, "\nRIGHTS: ", 0, 0);
+  name = my_strcat(name, rights, 0, 0);
+  name = my_strcat(name, "\nSIZE: ", 0, 0);
+  size = int_to_string(sb.st_size);
+  name = my_strcat(name, size, 0, 0);
+  name = my_strcat(name, "\n\n", 0, 0);
+  return (name);
 }
 
 void	archive_file(char *str, int size)

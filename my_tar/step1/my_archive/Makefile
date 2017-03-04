@@ -4,7 +4,7 @@
 ## Login   <hamid@epitech.net>
 ## 
 ## Started on  Sun Jan 22 22:28:59 2017 Hamidoullah NOUR OMAR
-## Last update Fri Mar  3 19:45:25 2017 Hamidoullah NOUR OMAR
+## Last update Sat Mar  4 16:34:21 2017 Hamidoullah NOUR OMAR
 ##
 
 
@@ -19,7 +19,12 @@ SRC	=	malloc_tab.c \
 		my_strcat.c \
 		my_strdup.c \
 		my_strlen.c \
-		my_archive.c
+		check_file_type.c \
+		check_rights.c \
+		rights_to_str.c \
+		my_archive.c \
+		int_to_string.c \
+		char_to_str.c
 
 OBJ	=	$(SRC:.c=.o)
 

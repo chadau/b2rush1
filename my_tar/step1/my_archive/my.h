@@ -5,7 +5,7 @@
 ** Login   <hamid@epitech.net>
 ** 
 ** Started on  Fri Mar  3 19:28:04 2017 Hamidoullah NOUR OMAR
-** Last update Sat Mar  4 11:19:49 2017 Hamidoullah NOUR OMAR
+** Last update Sat Mar  4 16:34:57 2017 Hamidoullah NOUR OMAR
 */
 
 #ifndef MY_H_
@@ -35,5 +35,12 @@ char	*my_strdup(char *);
 void	archive_file(char *, int);
 t_elem	check_if_file(char *, int);
 char	*copy_part_of_str(char *, int, int);
+char	*name_size_right(char *);
+char	*assemble_rights(struct stat);
+char	check_rights(int);
+char	file_type(struct stat);
+char	*rights_to_str(char, char, char, char);
+char	*char_to_str(char);
+char	*int_to_string(int);
 
 #endif /* MY_H_ */
