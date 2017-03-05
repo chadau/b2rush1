@@ -1,0 +1,47 @@
+/*
+** get_size.c for  in /home/devesno/Projects/b2rush1/my_archive
+** 
+** Made by 
+** Login   <lucas.cheminade@epitech.eu>
+** 
+** Started on  Sat Mar  4 20:30:12 2017 
+** Last update Sun Mar  5 15:51:32 2017 
+*/
+
+#include "my.h"
+#include "my_tar_header.h"
+
+char	*get_size(int nbr)
+{
+  char	*octal;
+  int	counter;
+
+  if ((octal = malloc(sizeof(*octal) * 12)) == NULL)
+    {
+      printf("error\n");
+      return (NULL);
+    }
+  octal[11] = '\0';
+  put_zero(octal);
+  counter = 10;
+  while (counter >= 0)
+    {
+      octal[counter] = (nbr % 8) + '0';
+      nbr = nbr / 8;
+      counter = counter - 1;
+    }
+  return (octal);
+}
+
+char	*put_zero(char *size)
+{
+  int	counter;
+
+  counter = 0;
+  while (size[counter] != '\0')
+    {
+      size[counter] = '0';
+      counter = counter + 1;
+    }
+  return (size);
+}

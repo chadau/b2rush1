@@ -5,13 +5,21 @@
 ## Login   <devesno@epitech.net>
 ## 
 ## Started on  Tue Jan 31 11:55:28 2017 lucas cheminade
-## Last update Sat Mar  4 17:49:37 2017 
+## Last update Sun Mar  5 15:31:41 2017 
 ##
 
 CFLAGS	+=	-I./include -g3
 
 SRC	=	main.c \
-		my_archive.c
+		my_archive.c \
+		check_file_type.c \
+		rights2.c \
+		get_permission.c \
+		check_rights.c \
+		rights_to_str.c \
+		my_putstr.c \
+		my_putchar.c \
+		get_size.c
 
 OBJ	=	$(SRC:.c=.o)
 

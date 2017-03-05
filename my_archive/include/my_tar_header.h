@@ -5,7 +5,7 @@
 ** Login   <lucas.cheminade@epitech.eu>
 ** 
 ** Started on  Sat Mar  4 17:14:20 2017 
-** Last update Sat Mar  4 18:09:39 2017 
+** Last update Sun Mar  5 15:51:11 2017 
 */
 
 #ifndef MY_TAR_HEADER_H_
@@ -38,5 +38,7 @@ typedef struct	s_my_posix_header
   char		prefix[155];
 }		t_my_posix_header;
 int		my_archive(char *);
+char		*get_size(int);
+char		*put_zero(char *);
 
 #endif /* MY_TAR_HEADER_H_ */
